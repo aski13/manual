@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система авторизации на PHP</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .feature {
+            background: #e8f4fc;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .step {
+            background: #f9f9f9;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 3px solid #27ae60;
+        }
+        .code {
+            font-family: Consolas, monospace;
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .github-btn {
+            display: inline-block;
+            background: #24292e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .github-btn:hover {
+            background: #1a1e22;
+        }
+        .warning {
+            background: #fff3e0;
+            padding: 15px;
+            border-left: 4px solid #ffa000;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Система авторизации на PHP</h1>
+        
+        <div class="feature">
+            <h2>🔹 Основные возможности</h2>
+            <ul>
+                <li>📝 Регистрация новых пользователей</li>
+                <li>🔐 Безопасный вход с проверкой пароля</li>
+                <li>🚪 Выход из системы</li>
+                <li>🛡️ Защита страниц через сессии</li>
+                <li>💾 Хранение данных в MySQL</li>
+            </ul>
+        </div>
+
+        <h2>📌 Краткая инструкция</h2>
+        
+        <div class="step">
+            <h3>1. Регистрация</h3>
+            <p>Заполните форму: имя пользователя, email и пароль (минимум 6 символов)</p>
+        </div>
+        
+        <div class="step">
+            <h3>2. Вход в систему</h3>
+            <p>Используйте свои учетные данные для авторизации</p>
+        </div>
+        
+        <div class="step">
+            <h3>3. Защищенные страницы</h3>
+            <p>После входа вы получите доступ к закрытым разделам</p>
+        </div>
+
+        <div class="warning">
+            <p><strong>Важно:</strong> Для работы системы требуется PHP 7.0+ и MySQL 5.6+</p>
+        </div>
+
+        <h2>🛠️ Внедрение в ваш проект</h2>
+        
+        <div class="code">
+// В начало защищенных страниц добавьте:<br>
+&lt;?php<br>
+session_start();<br>
+if (!isset($_SESSION['user_id'])) {<br>
+&nbsp;&nbsp;header("Location: auth.php");<br>
+&nbsp;&nbsp;exit();<br>
+}<br>
+?&gt;
+        </div>
+        
+        <p>1. Скопируйте файлы в папку вашего проекта</p>
+        <p>2. Импортируйте SQL-структуру базы данных</p>
+        <p>3. Настройте подключение к БД в auth.php</p>
+
+        <h2>📦 Исходный код</h2>
+        <p>Полная версия проекта доступна на GitHub:</p>
+        <a href="https://github.com/ваш-логин/php-auth-system" class="github-btn">
+            🚀 Перейти на GitHub
+        </a>
+
+        <p style="margin-top: 30px; font-size: 0.9em; color: #666;">
+            Проект открыт для доработок и улучшений. Приветствуются pull-request'ы!
+        </p>
+    </div>
+</body>
+</html>
